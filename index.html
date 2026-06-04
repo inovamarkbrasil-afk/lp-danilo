@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danilo Coutinho | Celebrante de Casamentos</title>
+  <meta name="description" content="Cerimônias de casamento personalizadas, emocionantes e conduzidas com sensibilidade por Danilo Coutinho." />
+  <meta property="og:title" content="Danilo Coutinho | Celebrante de Casamentos" />
+  <meta property="og:description" content="Cerimônias de casamento personalizadas, emocionantes e conduzidas com sensibilidade por Danilo Coutinho." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+
+    <!-- Vídeo ambiental — sempre atrás, nunca competindo com o conteúdo -->
+    <div class="hero-bg-video" aria-hidden="true">
+      <video autoplay muted loop playsinline poster="assets/cerimonia-1.png">
+        <source src="assets/video-casamento.mp4" type="video/mp4">
+      </video>
+      <div class="hero-bg-overlay"></div>
+    </div>
+
+    <div class="hero__logo">
+      <img src="assets/logo (2).png" alt="Danilo Coutinho Celebrante de Casamentos" />
+    </div>
+
+    <div class="ceremony-carousel" id="ceremonyCarousel">
+      <div class="ceremony-carousel__track" id="ceremonyTrack">
+        <div class="ceremony-carousel__slide">
+          <img src="assets/cerimonia-1.png" alt="Cerimônia conduzida por Danilo Coutinho" />
+        </div>
+        <div class="ceremony-carousel__slide">
+          <img src="assets/cerimonia-2.png" alt="Cerimônia conduzida por Danilo Coutinho" loading="lazy" />
+        </div>
+        <div class="ceremony-carousel__slide">
+          <img src="assets/cerimonia-3.png" alt="Cerimônia conduzida por Danilo Coutinho" loading="lazy" />
+        </div>
+        <div class="ceremony-carousel__slide">
+          <img src="assets/cerimonia-4.png" alt="Cerimônia conduzida por Danilo Coutinho" loading="lazy" />
+        </div>
+        <div class="ceremony-carousel__slide">
+          <img src="assets/cerimonia-5.png" alt="Cerimônia conduzida por Danilo Coutinho" loading="lazy" />
+        </div>
+        <div class="ceremony-carousel__slide">
+          <img src="assets/cerimonia-6.png" alt="Cerimônia conduzida por Danilo Coutinho" loading="lazy" />
+        </div>
+        <div class="ceremony-carousel__slide">
+          <img src="assets/cerimonia-7.png" alt="Cerimônia conduzida por Danilo Coutinho" loading="lazy" />
+        </div>
+      </div>
+      <button class="ceremony-carousel__btn ceremony-carousel__btn--prev" id="ceremonyPrev" aria-label="Cerimônia anterior">&#8592;</button>
+      <button class="ceremony-carousel__btn ceremony-carousel__btn--next" id="ceremonyNext" aria-label="Próxima cerimônia">&#8594;</button>
+      <div class="ceremony-carousel__dots" id="ceremonyDots"></div>
+    </div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow">Cerimônias reais. Histórias únicas. Emoções que ficam para sempre.</p>
+      <h1 class="hero__title">A cerimônia do casamento de vocês merece contar a história que só vocês viveram.</h1>
+      <p class="hero__subtitle">Com uma celebração personalizada, leve e emocionante, Danilo Coutinho transforma a trajetória do casal em uma cerimônia feita para emocionar, envolver os convidados e criar memórias inesquecíveis.</p>
+      <a href="#" class="btn-whatsapp primary js-whatsapp" aria-label="Falar com Danilo no WhatsApp" target="_blank" rel="noopener noreferrer">
+        <svg class="wpp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Falar com o Danilo no WhatsApp
+      </a>
+      <p class="hero__support">Atendimento personalizado para noivos que desejam uma cerimônia com significado, emoção e verdade.</p>
+    </div>
+
+  </section>
+
+  <!-- ===== DEPOIMENTOS ===== -->
+  <section class="testimonials section">
+    <div class="container">
+
+      <div class="section__header fade-up">
+        <h2 class="section__title">O que os casais dizem sobre viver esse momento com Danilo.</h2>
+        <p class="section__text">Cada cerimônia carrega uma história única. E para muitos casais, ter alguém capaz de transformar essa história em palavras torna o momento ainda mais especial.</p>
+      </div>
+
+      <div class="dep-carousel fade-up" id="depCarousel">
+        <button class="dep-carousel__btn dep-carousel__btn--prev" id="depPrev" aria-label="Depoimento anterior">&#8592;</button>
+        <div class="dep-carousel__wrapper">
+          <div class="dep-carousel__track" id="depTrack">
+            <div class="dep-carousel__slide">
+              <img src="assets/dep-1.png" alt="Depoimento de casal sobre a cerimônia com Danilo Coutinho" loading="lazy" />
+            </div>
+            <div class="dep-carousel__slide">
+              <img src="assets/dep-2.png" alt="Depoimento de casal sobre a cerimônia com Danilo Coutinho" loading="lazy" />
+            </div>
+            <div class="dep-carousel__slide">
+              <img src="assets/dep-3.png" alt="Depoimento de casal sobre a cerimônia com Danilo Coutinho" loading="lazy" />
+            </div>
+            <div class="dep-carousel__slide">
+              <img src="assets/dep-4.png" alt="Depoimento de casal sobre a cerimônia com Danilo Coutinho" loading="lazy" />
+            </div>
+            <div class="dep-carousel__slide">
+              <img src="assets/dep-5.png" alt="Depoimento de casal sobre a cerimônia com Danilo Coutinho" loading="lazy" />
+            </div>
+            <div class="dep-carousel__slide">
+              <img src="assets/dep-6.png" alt="Depoimento de casal sobre a cerimônia com Danilo Coutinho" loading="lazy" />
+            </div>
+            <div class="dep-carousel__slide">
+              <img src="assets/dep-7.png" alt="Depoimento de casal sobre a cerimônia com Danilo Coutinho" loading="lazy" />
+            </div>
+            <div class="dep-carousel__slide">
+              <img src="assets/dep-8.png" alt="Depoimento de casal sobre a cerimônia com Danilo Coutinho" loading="lazy" />
+            </div>
+          </div>
+        </div>
+        <button class="dep-carousel__btn dep-carousel__btn--next" id="depNext" aria-label="Próximo depoimento">&#8594;</button>
+        <div class="dep-carousel__dots" id="depDots"></div>
+      </div>
+
+      <p class="testimonials__microcopy fade-up">Histórias reais de casais que viveram uma cerimônia personalizada, emocionante e cheia de significado.</p>
+
+    </div>
+  </section>
+
+  <!-- ===== PARA QUEM É ===== -->
+  <section class="for-whom section">
+    <div class="container">
+
+      <div class="section__header fade-up">
+        <h2 class="section__title">Para noivos que não querem uma cerimônia genérica.</h2>
+        <p class="section__text">Essa experiência é para casais que desejam viver uma cerimônia com personalidade, feita com cuidado e conduzida com sensibilidade.</p>
+      </div>
+
+      <div class="cards-grid">
+        <article class="card fade-up">
+          <span class="card__accent"></span>
+          <h3 class="card__title">Para quem quer emoção</h3>
+          <p class="card__text">Uma celebração que toca o coração e transforma momentos importantes da história do casal em palavras inesquecíveis.</p>
+        </article>
+        <article class="card fade-up">
+          <span class="card__accent"></span>
+          <h3 class="card__title">Para quem quer leveza</h3>
+          <p class="card__text">Uma cerimônia com naturalidade, boas risadas e aquele clima gostoso que envolve os convidados do início ao fim.</p>
+        </article>
+        <article class="card fade-up">
+          <span class="card__accent"></span>
+          <h3 class="card__title">Para quem quer significado</h3>
+          <p class="card__text">Cada detalhe é pensado para representar quem vocês são, o que viveram e o que desejam construir juntos.</p>
+        </article>
+        <article class="card fade-up">
+          <span class="card__accent"></span>
+          <h3 class="card__title">Para quem quer memória</h3>
+          <p class="card__text">Porque o casamento passa, mas as palavras ditas naquele altar podem ficar para sempre.</p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== SOBRE O DANILO ===== -->
+  <section class="about section">
+    <div class="container about__inner">
+
+      <div class="about__image fade-up">
+        <img src="assets/danilo.png" alt="Danilo Coutinho, celebrante de casamentos" loading="lazy" />
+      </div>
+
+      <div class="about__content fade-up">
+        <h2 class="section__title about__title">Quem é Danilo Coutinho?</h2>
+        <p>Danilo Coutinho é celebrante de casamentos e acredita que toda história de amor merece ser contada com verdade, emoção e beleza.</p>
+        <p>Antes de ser celebrante, Danilo é marido da Bia e pai da Lulu. E talvez seja justamente por isso que ele enxergue o amor nos detalhes: nas escolhas diárias, nos gestos simples, nas renúncias, nas risadas e nos momentos que parecem pequenos, mas se tornam inesquecíveis.</p>
+        <p>Seu trabalho é ouvir o casal, compreender a história por trás da relação e transformar tudo isso em uma cerimônia personalizada, capaz de emocionar os noivos e conectar todos os convidados.</p>
+        <p>Mais do que celebrar casamentos, Danilo conta histórias que merecem ser lembradas para sempre.</p>
+        <a href="#" class="btn-whatsapp secondary js-whatsapp" aria-label="Ver disponibilidade no WhatsApp" target="_blank" rel="noopener noreferrer">
+          <svg class="wpp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Ver disponibilidade da minha data
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== COMO FUNCIONA ===== -->
+  <section class="how section">
+    <div class="container">
+
+      <div class="section__header fade-up">
+        <h2 class="section__title">Uma cerimônia construída com cuidado, escuta e verdade.</h2>
+      </div>
+
+      <div class="steps">
+        <div class="step fade-up">
+          <div class="step__number">01</div>
+          <div class="step__body">
+            <h3 class="step__title">Primeiro contato</h3>
+            <p class="step__text">Vocês entram em contato, compartilham a data do casamento e contam um pouco sobre o estilo de cerimônia que desejam.</p>
+          </div>
+        </div>
+        <div class="step fade-up">
+          <div class="step__number">02</div>
+          <div class="step__body">
+            <h3 class="step__title">Conversas com o casal</h3>
+            <p class="step__text">Danilo conduz uma escuta cuidadosa para conhecer a trajetória de vocês, os momentos marcantes, os detalhes da relação e aquilo que torna a história única.</p>
+          </div>
+        </div>
+        <div class="step fade-up">
+          <div class="step__number">03</div>
+          <div class="step__body">
+            <h3 class="step__title">Criação da cerimônia</h3>
+            <p class="step__text">A partir das conversas, a cerimônia é escrita de forma personalizada, com uma narrativa leve, emocionante e fiel à essência do casal.</p>
+          </div>
+        </div>
+        <div class="step fade-up">
+          <div class="step__number">04</div>
+          <div class="step__body">
+            <h3 class="step__title">O grande dia</h3>
+            <p class="step__text">No dia do casamento, Danilo conduz a celebração com presença, sensibilidade e emoção, criando um momento inesquecível para vocês e para todos os convidados.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== DIFERENCIAIS ===== -->
+  <section class="differentials section">
+    <div class="container">
+
+      <div class="section__header fade-up">
+        <h2 class="section__title">O que torna a cerimônia diferente?</h2>
+      </div>
+
+      <div class="cards-grid">
+        <article class="card card--gold fade-up">
+          <span class="card__accent"></span>
+          <h3 class="card__title">Nada de roteiro pronto</h3>
+          <p class="card__text">A cerimônia é criada a partir da história real do casal, com detalhes que fazem sentido para vocês.</p>
+        </article>
+        <article class="card card--gold fade-up">
+          <span class="card__accent"></span>
+          <h3 class="card__title">Emoção na medida certa</h3>
+          <p class="card__text">Uma condução sensível, capaz de emocionar sem perder a leveza e a naturalidade.</p>
+        </article>
+        <article class="card card--gold fade-up">
+          <span class="card__accent"></span>
+          <h3 class="card__title">Conexão com os convidados</h3>
+          <p class="card__text">A celebração envolve quem está presente, fazendo com que todos se sintam parte da história.</p>
+        </article>
+        <article class="card card--gold fade-up">
+          <span class="card__accent"></span>
+          <h3 class="card__title">Leveza, fé e personalidade</h3>
+          <p class="card__text">A cerimônia pode ter um tom mais emocionante, divertido, espiritual ou familiar, sempre respeitando a essência de vocês.</p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO EMOCIONAL ===== -->
+  <section class="emotional section">
+    <div class="container">
+      <div class="emotional__inner fade-up">
+        <h2 class="emotional__title">Mais do que conduzir uma cerimônia, é sobre dar voz ao amor de vocês.</h2>
+        <div class="emotional__divider"></div>
+        <p class="emotional__text">Todo casal tem uma história que não cabe em um roteiro pronto.<br>Tem encontros, escolhas, desafios, risadas, recomeços, planos e detalhes que só quem viveu entende.</p>
+        <p class="emotional__text emotional__text--highlight">A cerimônia é o momento em que tudo isso ganha voz.</p>
+        <p class="emotional__text">É quando familiares e amigos deixam de assistir apenas a um casamento e passam a sentir, junto com vocês, a beleza da história que os trouxe até ali.</p>
+        <p class="emotional__text">Com o Danilo, a celebração é construída a partir da essência do casal: verdadeira, emocionante, leve e única.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq section">
+    <div class="container">
+
+      <div class="section__header fade-up">
+        <h2 class="section__title">Dúvidas frequentes</h2>
+      </div>
+
+      <div class="accordion fade-up">
+
+        <div class="accordion__item">
+          <button class="accordion__btn" aria-expanded="false">
+            A cerimônia é personalizada para cada casal?
+            <span class="accordion__icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion__body" role="region">
+            <div class="accordion__body-inner">
+              <p>Sim. A cerimônia é construída a partir da história de vocês, por meio de conversas e escuta cuidadosa para transformar lembranças, sentimentos e momentos marcantes em uma narrativa única.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__btn" aria-expanded="false">
+            A cerimônia pode ser mais leve e divertida?
+            <span class="accordion__icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion__body" role="region">
+            <div class="accordion__body-inner">
+              <p>Sim. A celebração pode ter emoção, leveza, risadas, fé e participações especiais, sempre de acordo com a essência do casal.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__btn" aria-expanded="false">
+            É possível incluir familiares ou amigos na cerimônia?
+            <span class="accordion__icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion__body" role="region">
+            <div class="accordion__body-inner">
+              <p>Sim. Quando faz sentido para o casal, pessoas especiais podem participar da cerimônia de forma cuidadosa e emocionante.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__btn" aria-expanded="false">
+            Como faço para saber se a minha data está disponível?
+            <span class="accordion__icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion__body" role="region">
+            <div class="accordion__body-inner">
+              <p>Basta clicar no botão de WhatsApp e enviar uma mensagem para o Danilo. Ele irá verificar a disponibilidade da data e conversar com vocês sobre os próximos passos.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA FINAL ===== -->
+  <section class="final-cta section">
+    <div class="container">
+      <div class="final-cta__inner fade-up">
+        <h2 class="final-cta__title">A história de vocês merece ser celebrada com verdade.</h2>
+        <p class="final-cta__text">O casamento é um dos dias mais importantes da vida de um casal. E a cerimônia pode ser muito mais do que uma formalidade.</p>
+        <p class="final-cta__text">Ela pode ser o momento em que todos entendem, sentem e se emocionam com a história que trouxe vocês até aqui.</p>
+        <a href="#" class="btn-whatsapp primary js-whatsapp" aria-label="Falar com Danilo no WhatsApp" target="_blank" rel="noopener noreferrer">
+          <svg class="wpp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Falar com o Danilo no WhatsApp
+        </a>
+        <p class="final-cta__support">Clique no botão e converse diretamente sobre a disponibilidade para a data do casamento de vocês.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Danilo Coutinho &mdash; Celebrante de Casamentos</p>
+  </footer>
+
+  <!-- Botão flutuante de WhatsApp -->
+  <a href="#" class="floating-whatsapp js-whatsapp" aria-label="Falar com Danilo no WhatsApp" target="_blank" rel="noopener noreferrer">
+    <svg class="wpp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,989 @@
+/* ============================================================
+   VARIABLES & RESET
+   ============================================================ */
+:root {
+  /* Colors */
+  --color-bg:          #faf8f5;
+  --color-bg-alt:      #f4ede2;
+  --color-white:       #ffffff;
+  --color-text:        #2a1f1a;
+  --color-text-muted:  #7a6e68;
+  --color-gold:        #b89558;
+  --color-gold-light:  #d4b47a;
+  --color-gold-pale:   #f5ede0;
+  --color-border:      #e8ddd0;
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans:  'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Layout */
+  --max-width:     1100px;
+  --gutter:        24px;
+
+  /* Effects */
+  --radius:        6px;
+  --radius-lg:     14px;
+  --shadow:        0 2px 20px rgba(42, 31, 26, 0.07);
+  --shadow-hover:  0 8px 40px rgba(42, 31, 26, 0.13);
+  --transition:    0.3s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.section__header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 64px;
+}
+
+.section__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 3.8vw, 3rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin-bottom: 20px;
+}
+
+.section__text {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.85;
+}
+
+/* ============================================================
+   BUTTONS — WhatsApp CTAs
+   ============================================================ */
+
+/* Ícone SVG inline: herda a cor do texto do botão via currentColor */
+.wpp-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+/* Base */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 28px;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.25s ease, color 0.25s ease,
+              transform 0.25s ease, box-shadow 0.25s ease,
+              border-color 0.25s ease;
+}
+
+/* Primário — fundo escuro, ícone e texto brancos */
+.btn-whatsapp.primary {
+  background: #2b201c;
+  color: #ffffff;
+  box-shadow: 0 14px 35px rgba(43, 32, 28, 0.16);
+}
+
+.btn-whatsapp.primary:hover {
+  background: #1a0e0a;
+  transform: translateY(-2px);
+  box-shadow: 0 18px 45px rgba(43, 32, 28, 0.22);
+}
+
+/* Secundário — outline, ícone e texto escuros; vira escuro no hover */
+.btn-whatsapp.secondary {
+  background: transparent;
+  color: #2b201c;
+  border-color: rgba(43, 32, 28, 0.45);
+}
+
+.btn-whatsapp.secondary:hover {
+  background: #2b201c;
+  color: #ffffff;
+  border-color: #2b201c;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(43, 32, 28, 0.18);
+}
+
+/* ============================================================
+   SCROLL ANIMATIONS
+   ============================================================ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.72s ease, transform 0.72s ease;
+}
+
+.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-bg);
+  padding-top: 0;
+}
+
+.hero__logo {
+  display: flex;
+  justify-content: center;
+  padding: 6px var(--gutter) 4px;
+}
+
+.hero__logo img {
+  max-width: 72px;
+  height: auto;
+}
+
+/* ----- Ceremony Carousel ----- */
+.ceremony-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ceremony-carousel__track {
+  display: flex;
+  will-change: transform;
+  transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.ceremony-carousel__slide {
+  flex: 0 0 100%;
+  height: 540px;
+  overflow: hidden;
+}
+
+.ceremony-carousel__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.ceremony-carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: var(--color-text);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 2;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.ceremony-carousel__btn:hover {
+  background: var(--color-white);
+  box-shadow: var(--shadow-hover);
+}
+
+.ceremony-carousel__btn--prev { left: 20px; }
+.ceremony-carousel__btn--next { right: 20px; }
+
+.ceremony-carousel__dots {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.ceremony-carousel__dots .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  transition: background-color var(--transition), transform var(--transition);
+  border: none;
+  padding: 0;
+}
+
+.ceremony-carousel__dots .dot.active {
+  background: var(--color-white);
+  transform: scale(1.5);
+}
+
+/* ----- Hero Content ----- */
+.hero__content {
+  text-align: center;
+  padding: 48px var(--gutter) 64px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero__eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 28px;
+}
+
+.hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--color-text);
+  margin-bottom: 28px;
+}
+
+.hero__subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.85;
+  margin-bottom: 44px;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero__support {
+  margin-top: 22px;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.01em;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ----- Vídeo ambiental de fundo (atrás de tudo) ----- */
+.hero-bg-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-bg-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.45;
+  filter: blur(3px) saturate(0.8);
+  transform: scale(1.04); /* elimina bordas do blur */
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(250, 248, 245, 0.68) 0%,
+    rgba(250, 248, 245, 0.78) 55%,
+    rgba(250, 248, 245, 0.92) 100%
+  );
+}
+
+/* Logo, carrossel e conteúdo ficam à frente do vídeo */
+.hero__logo,
+.ceremony-carousel,
+.hero__content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testimonials {
+  background-color: var(--color-bg-alt);
+}
+
+.dep-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.dep-carousel__wrapper {
+  overflow: hidden;
+  flex: 1;
+  border-radius: var(--radius-lg);
+  min-width: 0;
+}
+
+.dep-carousel__track {
+  display: flex;
+  will-change: transform;
+  transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.dep-carousel__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.dep-carousel__slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-lg);
+}
+
+.dep-carousel__btn {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+}
+
+.dep-carousel__btn:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.dep-carousel__btn--prev { margin-right: 20px; }
+.dep-carousel__btn--next { margin-left: 20px; }
+
+.dep-carousel__dots {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.dep-carousel__dots .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-border);
+  cursor: pointer;
+  transition: background-color var(--transition), transform var(--transition);
+  border: none;
+  padding: 0;
+}
+
+.dep-carousel__dots .dot.active {
+  background: var(--color-gold);
+  transform: scale(1.5);
+}
+
+.testimonials__microcopy {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.01em;
+  margin-top: 8px;
+}
+
+/* ============================================================
+   CARDS GRID
+   ============================================================ */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 40px 36px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--color-border);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+
+.card__accent {
+  display: block;
+  width: 28px;
+  height: 1.5px;
+  background: var(--color-gold);
+  margin-bottom: 22px;
+}
+
+.card__title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+
+.card__text {
+  font-size: 0.93rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+.card--gold {
+  background: var(--color-gold-pale);
+  border-color: #dfd0b4;
+}
+
+/* ============================================================
+   FOR WHOM
+   ============================================================ */
+.for-whom {
+  background-color: var(--color-bg);
+}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about {
+  background-color: var(--color-bg-alt);
+}
+
+.about__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about__image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-hover);
+}
+
+.about__title {
+  text-align: left;
+  margin-bottom: 28px;
+}
+
+.about__content p {
+  color: var(--color-text-muted);
+  line-height: 1.9;
+  margin-bottom: 18px;
+  font-size: 0.96rem;
+}
+
+.about__content p:last-of-type {
+  margin-bottom: 36px;
+}
+
+/* ============================================================
+   HOW IT WORKS
+   ============================================================ */
+.how {
+  background-color: var(--color-bg);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 52px 80px;
+}
+
+.step {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.step__number {
+  font-family: var(--font-serif);
+  font-size: 3.2rem;
+  font-weight: 300;
+  color: var(--color-gold-light);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 60px;
+  letter-spacing: -0.02em;
+}
+
+.step__title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.step__text {
+  font-size: 0.93rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+/* ============================================================
+   DIFFERENTIALS
+   ============================================================ */
+.differentials {
+  background-color: var(--color-bg-alt);
+}
+
+/* ============================================================
+   EMOTIONAL SECTION
+   ============================================================ */
+.emotional {
+  background-color: var(--color-bg);
+}
+
+.emotional__inner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 80px 72px;
+  background: var(--color-white);
+  box-shadow: var(--shadow);
+}
+
+.emotional__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.7rem, 3.2vw, 2.6rem);
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--color-text);
+  margin-bottom: 36px;
+}
+
+.emotional__divider {
+  width: 40px;
+  height: 1px;
+  background: var(--color-gold);
+  margin: 0 auto 36px;
+}
+
+.emotional__text {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.emotional__text--highlight {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-text);
+  margin-bottom: 24px;
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq {
+  background-color: var(--color-bg-alt);
+}
+
+.accordion {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.accordion__item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.accordion__item:first-child {
+  border-top: 1px solid var(--color-border);
+}
+
+.accordion__btn {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 26px 0;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-text);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  transition: color var(--transition);
+  line-height: 1.35;
+}
+
+.accordion__btn:hover {
+  color: var(--color-gold);
+}
+
+/* Plus/minus icon */
+.accordion__icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  position: relative;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-border);
+  transition: border-color var(--transition), background-color var(--transition);
+}
+
+.accordion__icon::before,
+.accordion__icon::after {
+  content: '';
+  position: absolute;
+  background: var(--color-text-muted);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.accordion__icon::before {
+  width: 10px;
+  height: 1.5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.accordion__icon::after {
+  width: 1.5px;
+  height: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.accordion__btn[aria-expanded="true"] .accordion__icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  opacity: 0;
+}
+
+.accordion__btn[aria-expanded="true"] .accordion__icon {
+  border-color: var(--color-gold);
+  background-color: var(--color-gold-pale);
+}
+
+/* Animated body using grid trick */
+.accordion__body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.38s ease;
+  overflow: hidden;
+}
+
+.accordion__body.is-open {
+  grid-template-rows: 1fr;
+}
+
+.accordion__body-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.accordion__body-inner p {
+  padding-bottom: 28px;
+  color: var(--color-text-muted);
+  line-height: 1.85;
+  font-size: 0.96rem;
+}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.final-cta {
+  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-gold-pale) 100%);
+}
+
+.final-cta__inner {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.final-cta__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 3.8vw, 3rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin-bottom: 28px;
+}
+
+.final-cta__text {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.85;
+  margin-bottom: 16px;
+}
+
+.final-cta__inner .btn-whatsapp {
+  margin-top: 36px;
+}
+
+.final-cta__support {
+  margin-top: 22px;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.01em;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: var(--color-text);
+  color: rgba(255, 255, 255, 0.42);
+  text-align: center;
+  padding: 30px var(--gutter);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   FLOATING WHATSAPP BUTTON
+   ============================================================ */
+.floating-whatsapp {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 35px rgba(37, 211, 102, 0.32);
+  z-index: 200;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.floating-whatsapp:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 18px 40px rgba(37, 211, 102, 0.45);
+}
+
+.floating-whatsapp .wpp-icon {
+  width: 26px;
+  height: 26px;
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE
+   ============================================================ */
+@media (max-width: 768px) {
+
+  .section {
+    padding: 64px 0;
+  }
+
+  .section__header {
+    margin-bottom: 40px;
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: 0;
+  }
+
+  .hero__logo {
+    padding: 4px var(--gutter) 2px;
+  }
+
+  .hero__logo img {
+    max-width: 62px;
+  }
+
+  .ceremony-carousel__slide {
+    height: 360px;
+  }
+
+  .ceremony-carousel__btn {
+    width: 38px;
+    height: 38px;
+    font-size: 0.85rem;
+  }
+
+  .ceremony-carousel__btn--prev { left: 10px; }
+  .ceremony-carousel__btn--next { right: 10px; }
+
+  .hero__content {
+    padding: 36px var(--gutter) 52px;
+  }
+
+  /* Botões WhatsApp — full width no mobile */
+  .btn-whatsapp {
+    width: 100%;
+    max-width: 340px;
+    min-height: 54px;
+    padding: 0 22px;
+    font-size: 0.95rem;
+  }
+
+  /* Botão flutuante — menor no mobile */
+  .floating-whatsapp {
+    width: 52px;
+    height: 52px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .floating-whatsapp .wpp-icon {
+    width: 23px;
+    height: 23px;
+  }
+
+  /* Cards */
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    padding: 32px 28px;
+  }
+
+  /* Testimonials */
+  .dep-carousel__btn {
+    display: none;
+  }
+
+  .dep-carousel {
+    margin-bottom: 56px;
+  }
+
+  /* About */
+  .about__inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .about__title {
+    text-align: center;
+  }
+
+  .about__content {
+    text-align: center;
+  }
+
+  /* Steps */
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* Emotional */
+  .emotional__inner {
+    padding: 52px 28px;
+    border-radius: 16px;
+  }
+
+}
+
+/* ============================================================
+   RESPONSIVE — DESKTOP ENHANCEMENTS
+   ============================================================ */
+@media (min-width: 769px) {
+
+  /* Logo na cor original — fundo claro */
+  .hero__logo img {
+    max-width: 90px;
+    filter: none;
+  }
+
+  .ceremony-carousel__slide {
+    height: 560px;
+  }
+
+  /* cerimonia-4 é plano aberto/elevado — casal está no centro do quadro */
+  .ceremony-carousel__slide:nth-child(4) img { object-position: center 30%; }
+}
+
+@media (min-width: 1100px) {
+
+  .ceremony-carousel__slide {
+    height: 560px;
+  }
+}
