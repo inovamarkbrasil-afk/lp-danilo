@@ -124,7 +124,7 @@ function buildCarousel(config) {
     prevBtn:       document.getElementById("ceremonyPrev"),
     nextBtn:       document.getElementById("ceremonyNext"),
     pauseTarget:   null,
-    interval:      4500
+    interval:      2000
   });
 })();
 
