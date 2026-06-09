@@ -2,8 +2,8 @@
    WHATSAPP CONFIG
    Troque o número abaixo pelo número real no formato: 55DDD9XXXXXXXX
    ============================================================ */
-const whatsappNumber  = "55SEUNUMEROAQUI";
-const whatsappMessage = "Olá, Danilo! Gostaria de saber mais sobre a cerimônia de casamento e verificar a disponibilidade para a minha data.";
+const whatsappNumber  = "55119913073868";
+const whatsappMessage = "Olá, Danilo! Estou programando meu casamento e tenho interesse em saber mais sobre seu trabalho";
 const whatsappUrl     = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(whatsappMessage);
 
 /* ============================================================
@@ -125,6 +125,24 @@ function buildCarousel(config) {
     nextBtn:       document.getElementById("ceremonyNext"),
     pauseTarget:   null,
     interval:      2000
+  });
+})();
+
+/* ============================================================
+   ABOUT CAROUSEL
+   ============================================================ */
+(function() {
+  var track = document.getElementById("aboutTrack");
+  if (!track) return;
+
+  buildCarousel({
+    track:         track,
+    slideSelector: ".about-carousel__slide",
+    dotsContainer: document.getElementById("aboutDots"),
+    prevBtn:       document.getElementById("aboutPrev"),
+    nextBtn:       document.getElementById("aboutNext"),
+    pauseTarget:   document.getElementById("aboutCarousel"),
+    interval:      4000
   });
 })();
 
