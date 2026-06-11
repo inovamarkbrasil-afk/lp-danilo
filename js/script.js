@@ -13,6 +13,13 @@ document.querySelectorAll(".js-whatsapp").forEach(function(el) {
   el.href   = whatsappUrl;
   el.target = "_blank";
   el.rel    = "noopener noreferrer";
+
+  // Dispara conversão "Lead" no Meta Pixel ao clicar no WhatsApp
+  el.addEventListener("click", function() {
+    if (typeof fbq === "function") {
+      fbq("track", "Lead", { content_name: "Clique WhatsApp" });
+    }
+  });
 });
 
 /* ============================================================
